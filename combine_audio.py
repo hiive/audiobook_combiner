@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Version 4.5
+# Version 4.6
 
 import os
 import argparse
@@ -228,6 +228,7 @@ def combine_files(book_name, files, vbr=False, vbr_quality=None, cbr_bitrate=Non
             "-i", input_file,
             "-vn",
             "-c:a", "aac",
+            "-ac", "1",  # Enforce mono output
         ]
         command.extend(bitrate_option)
         command.extend(sample_rate_option)  # Add sample rate if specified
